@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { FetchState, Blogdata } from './types/types';
 import Blogs from './components/Blogs';
+import './App.css';
 
 
 function App() {
