@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from 'react-hot-toast';
 import { Blogdata } from '../types/types';
 import { motion } from 'framer-motion';
 import Blog from './Blog';
@@ -23,6 +24,10 @@ const Blogs = ({data}: IBlogsProps) => {
             setFilter(data.filter((blog) => blog.tags.includes(item)));
           }
         }, 500);
+
+        toast.success(`${item} is selected.`, {
+            position: "bottom-center",
+          });
     };
 
     return(

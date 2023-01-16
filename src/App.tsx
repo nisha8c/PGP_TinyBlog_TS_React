@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 import { FetchState, Blogdata } from './types/types';
 import Blogs from './components/Blogs';
 import './App.css';
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+      <Toaster />
       <div className="App">
         <h1>List of Blogs</h1>
         <Blogs data={blogs}/>
