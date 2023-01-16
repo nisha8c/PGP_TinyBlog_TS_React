@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Blogdata } from '../types/types';
 import { motion } from 'framer-motion';
+import Blog from './Blog';
+import './Styles.scss'
 
 interface IBlogsProps {
  data: Blogdata[]
@@ -9,11 +11,6 @@ interface IBlogsProps {
 const Blogs = ({data}: IBlogsProps) => {
     const [filter, setFilter] = useState(data);
     const [activeFilter, setActiveFilter] = useState('All');
-
-    const filterBlogs = (tag: string) => {
-        const updatedList = () => data.filter((blog) => blog.tags.includes(tag));
-        setFilter(updatedList);
-    };
 
     const handleTagFilter = (item: string) => {
         setActiveFilter(item);
@@ -30,7 +27,7 @@ const Blogs = ({data}: IBlogsProps) => {
 
     return(
         <>
-            <div className="app__work-filter">
+            <div className="app__blog-filter">
                 {['american', 'english', 'history', 'magical', 'fiction', 'All'].map((item, index) => (
                 <div
                     key={index}
@@ -49,7 +46,7 @@ const Blogs = ({data}: IBlogsProps) => {
             >
                 {
                     filter.map((blog, index) => (
-                        <div>{blog.body}</div>
+                        <Blog data={blog} />
                     ))
                 }
 

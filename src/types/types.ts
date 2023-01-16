@@ -7,7 +7,7 @@ export enum FetchState {
 
 export type Blogdata = {
     id: number,
-    titles: string,
+    title: string,
     body: string,
     userId: number,
     tags: string[],
