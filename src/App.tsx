@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react";
 import { Toaster } from "react-hot-toast";
+import ScrollToTop from "react-scroll-to-top";
+
 import { FetchState, Blogdata } from './types/types';
 import Blogs from './components/Blogs';
 import './App.css';
@@ -31,6 +33,8 @@ function App() {
   return (
     <>
       <Toaster />
+      <ScrollToTop className="scroll-to-top" smooth={true} width='20' height='20' top={15}/>
+
       <div className="App">
         <h1>List of Blogs</h1>
         <Blogs data={blogs}/>

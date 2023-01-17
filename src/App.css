@@ -2,3 +2,6 @@ h1, h2 {
   text-align: center;
 }
 
+.scroll-to-top {
+  background-color: rgb(181, 206, 206);
+}
